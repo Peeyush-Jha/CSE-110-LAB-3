@@ -12,12 +12,13 @@ test('should display all items in the to-do list', () => {
 });
 
 test('should display correct number of items bought', () => {
-    render(<ToDoList />);
-    const checkbox1 = screen.getByTestId('todo-checkbox-1');
-    const checkbox2 = screen.getByTestId('todo-checkbox-2');
-  
-    fireEvent.click(checkbox1);
-    fireEvent.click(checkbox2);
-  
-    expect(screen.getByTestId('items-bought-counter').textContent).toBe('Items bought: 2');
-  });
+  render(<ToDoList />);
+  const checkbox1 = screen.getByTestId('todo-checkbox-1');
+  const checkbox2 = screen.getByTestId('todo-checkbox-2');
+
+  fireEvent.click(checkbox1);
+  fireEvent.click(checkbox2);
+
+  expect(screen.getByTestId('items-bought-counter').textContent).toBe('Items bought: 2');
+});
+

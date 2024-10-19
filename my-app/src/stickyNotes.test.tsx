@@ -17,4 +17,12 @@ test('should display all the notes that are created', () => {
     });
   });
 
+  test('should delete the note when delete button is clicked', () => {
+    render(<StickyNotes />);
+    const deleteButton = screen.getByTestId(1);
+    fireEvent.click(deleteButton);
+  
+    expect(screen.queryByTestId(1)).not.toBeInTheDocument();
+  });
+
 
